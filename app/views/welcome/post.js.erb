@@ -1,0 +1,6 @@
+$('#errors').html('');
+<% if @item.errors.any? %>
+  $('#errors').html('<%= @item.errors.full_messages.join('; ') %>');
+<% else %>
+  $('ul').append('<li><%= @item.value %></li>');
+<% end %>
